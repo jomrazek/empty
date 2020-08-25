@@ -1,12 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.github.jomrazek.test</groupId>
-    <artifactId>empty</artifactId>
-    <version>1.0.1</version>
-
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.github.jomrazek</groupId>
+   <artifactId>jomrazek-empty</artifactId>
+   <version>1.0.1</version>
+   <build>
+      <finalName>${project.artifactId}_${project.version}</finalName>
+      <plugins>
+         <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.6</version>
+            <executions>
+               <execution>
+                  <id>copy-resources</id>
+                  <phase>validate</phase>
+                  <goals>
+                     <goal>copy-resources</goal>
+                  </goals>
+                  <configuration>
+                     <outputDirectory>${basedir}/target/classes</outputDirectory>
+                     <includeEmptyDirs>true</includeEmptyDirs>
+                     <resources>
+                        <resource>
+                           <directory>${basedir}/src/main/java/com/github/jomrazek</directory>
+                           <filtering>false</filtering>
+                        </resource>
+                     </resources>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.4</version>
+            <configuration>
+               <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+               </descriptorRefs>
+               <appendAssemblyId>false</appendAssemblyId>
+               <archive>
+                  <manifest>
+                     <mainClass>com.github.jomrazek.EmptyClass</mainClass>
+                  </manifest>
+                  <manifestEntries>
+                     <SCM-Revision>${buildNumber}</SCM-Revision>
+                     <Project-Version>${project.version}</Project-Version>
+                     <Build-Date>${maven.build.timestamp}</Build-Date>
+                     <Project-Name>${project.artifactId}_${project.version}</Project-Name>
+                  </manifestEntries>
+               </archive>
+            </configuration>
+            <executions>
+               <execution>
+                  <id>make-assembly</id>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>net.revelc.code.formatter</groupId>
+            <artifactId>formatter-maven-plugin</artifactId>
+            <version>2.12.0</version>
+            <configuration>
+               <encoding>UTF-8</encoding>
+            </configuration>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>format</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
+   </build>
 </project>
+
+
