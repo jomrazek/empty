@@ -7,6 +7,15 @@
    <build>
       <finalName>${project.artifactId}_${project.version}</finalName>
       <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
          <plugin>
             <artifactId>maven-resources-plugin</artifactId>
             <version>2.6</version>
@@ -34,21 +43,9 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <version>2.4</version>
             <configuration>
-               <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-               </descriptorRefs>
-               <appendAssemblyId>false</appendAssemblyId>
-               <archive>
-                  <manifest>
-                     <mainClass>com.github.jomrazek.EmptyClass</mainClass>
-                  </manifest>
-                  <manifestEntries>
-                     <SCM-Revision>${buildNumber}</SCM-Revision>
-                     <Project-Version>${project.version}</Project-Version>
-                     <Build-Date>${maven.build.timestamp}</Build-Date>
-                     <Project-Name>${project.artifactId}_${project.version}</Project-Name>
-                  </manifestEntries>
-               </archive>
+               <descriptors>
+                  <descriptorRef>src/main/assembly/assembly.xml</descriptorRef>
+               </descriptors>
             </configuration>
             <executions>
                <execution>
