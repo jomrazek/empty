@@ -4,6 +4,15 @@
    <groupId>com.github.jomrazek</groupId>
    <artifactId>jomrazek-empty</artifactId>
    <version>1.0.1</version>
+
+   <dependencies>
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.18.20</version>
+	</dependency>
+</dependencies>
+   
    <build>
       <finalName>${project.artifactId}_${project.version}</finalName>
       <plugins>

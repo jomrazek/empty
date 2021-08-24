@@ -24,4 +24,10 @@
           <useDefaultExcludes>true</useDefaultExcludes>
         </fileSet>
       </fileSets>
+        <dependencySets>
+        <dependencySet>
+        <outputDirectory>/</outputDirectory>
+        <scope>compile</scope>
+        </dependencySet>
+        </dependencySets>
     </assembly>
