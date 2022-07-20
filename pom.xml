@@ -3,13 +3,18 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.github.jomrazek</groupId>
    <artifactId>jomrazek-empty</artifactId>
-   <version>1.0.4</version>
+   <version>1.0.5</version>
 
    <dependencies>
 	<dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
 		<version>1.18.20</version>
+	</dependency>
+	<dependency>
+		<groupId>com.github.mifmif</groupId>
+		<artifactId>generex</artifactId>
+		<version>1.0.2</version>
 	</dependency>
 </dependencies>
    
