@@ -5,6 +5,16 @@
    <artifactId>jomrazek-empty</artifactId>
    <version>1.0.5</version>
 
+   <!--test-->	
+   <licenses>
+     <license>
+      <name>The GNU General Public License, v2 with Universal FOSS Exception, v1.0</name>
+      <distribution>repo</distribution>
+      <comments>For detailed license information see the LICENSE file in this distribution.</comments>
+      <url>http://www.mysql.com/company/legal/licensing/foss-exception.html</url>
+     </license>
+   </licenses>
+
    <dependencies>
 	<dependency>
 		<groupId>org.projectlombok</groupId>
