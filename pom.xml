@@ -3,7 +3,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.github.jomrazek</groupId>
    <artifactId>jomrazek-empty</artifactId>
-   <version>1.0.7</version>
+   <version>1.0.8</version>
 
    <!--test-->	
    <licenses>
@@ -76,8 +76,8 @@
                   </goals>
                   <configuration>
                      <url>https://registry.quarkus.io/maven/io/quarkus/registry/quarkus-registry-descriptor/1.0-SNAPSHOT/maven-metadata.xml</url>
-                     <outputFileName>maven-metadata.xml</outputFileName>
-                     <outputDirectory>${project.build.directory}</outputDirectory>
+                     <outputFileName>maven-metadata-quarkusregistry.xml</outputFileName>
+                     <outputDirectory>${project.basedir}</outputDirectory>
                   </configuration>
                </execution>
             </executions>
